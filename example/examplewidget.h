@@ -21,6 +21,7 @@ private slots:
     void on_btnAddInfoMessage_clicked();
     void on_btnAddInfoMessageCancel_clicked();
     void on_btnAddInfoMessageCustom_clicked();
+    void on_btnAddcolorInfoMessage_clicked();
     void handleInfoBarCancelButton();
     void handleInfoBarCustomButton();
     QString newInfoBarEntryId();

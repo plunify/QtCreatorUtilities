@@ -49,6 +49,7 @@ InfoBarEntry::InfoBarEntry(const QString &_id, const QString &_infoText, const Q
     , buttonPressMember(0)
     , cancelObject(0)
     , cancelButtonPressMember(0)
+    , bColor(QColor(255, 255, 225))
 {
 }
 
@@ -70,6 +71,11 @@ void InfoBarEntry::setCancelButtonInfo(const QString &_cancelButtonText, QObject
     cancelButtonText = _cancelButtonText;
     cancelObject = _object;
     cancelButtonPressMember = _member;
+}
+
+void InfoBarEntry::setBackgroudColor(const QColor &color)
+{
+    bColor = color;
 }
 
 void InfoBar::addInfo(const InfoBarEntry &info)
@@ -150,7 +156,7 @@ void InfoBarDisplay::update()
         QFrame *infoWidget = new QFrame;
 
         QPalette pal = infoWidget->palette();
-        pal.setColor(QPalette::Window, QColor(255, 255, 225));
+        pal.setColor(QPalette::Window, info.bColor);
         pal.setColor(QPalette::WindowText, Qt::black);
 
         infoWidget->setPalette(pal);

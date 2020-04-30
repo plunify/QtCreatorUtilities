@@ -77,6 +77,12 @@ void ExampleWidget::on_btnAddInfoMessageCustom_clicked() {
 
 }
 
+void ExampleWidget::on_btnAddcolorInfoMessage_clicked() {
+    InfoBarEntry info_entry(newInfoBarEntryId(),"Example backgroud-info-bar message");
+    info_entry.setBackgroudColor(QColor(120, 120, 120));
+    d->info_bar.addInfo(info_entry);
+}
+
 void ExampleWidget::handleInfoBarCancelButton() {
     qDebug() << Q_FUNC_INFO;
 }

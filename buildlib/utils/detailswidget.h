@@ -63,7 +63,7 @@ public:
     void setSummaryText(const QString &text);
     QString summaryText() const;
 
-    void setAdditionalSummaryText(const QString &text);
+    //void setAdditionalSummaryText(const QString &text);
     QString additionalSummaryText() const;
 
     void setState(State state);
@@ -95,6 +95,9 @@ signals:
 
 private slots:
     void setExpanded(bool);
+
+public slots:
+    void setAdditionalSummaryText(const QString &text);
 
 protected:
     virtual void paintEvent(QPaintEvent *paintEvent);

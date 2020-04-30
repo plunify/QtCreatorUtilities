@@ -52,9 +52,11 @@ class QT_CREATOR_UTILITIES_EXPORT InfoBarEntry
 public:
     InfoBarEntry(const QString &_id, const QString &_infoText, const QIcon& _icon = QIcon());
     InfoBarEntry(const InfoBarEntry &other) { *this = other; }
+
     void setCustomButtonInfo(const QString &_buttonText, QObject *_object, const char *_member);
     void setCancelButtonInfo(QObject *_object, const char *_member);
     void setCancelButtonInfo(const QString &_cancelButtonText, QObject *_object, const char *_member);
+    void setBackgroudColor(const QColor& color=QColor(255, 255, 255));
 
 private:
     QIcon icon;
@@ -66,6 +68,10 @@ private:
     QString cancelButtonText;
     QObject *cancelObject;
     const char *cancelButtonPressMember;
+
+    //! for varient color bar
+    QColor bColor;
+
     friend class InfoBar;
     friend class InfoBarDisplay;
 };
